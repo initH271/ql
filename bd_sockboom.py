@@ -105,4 +105,4 @@ if __name__ == '__main__':
         msg += run.get_sign_msg()
         print(msg)
     if send:
-        send("ikuuu签到通知", msg)
+        send("sockboom签到通知", msg)
