@@ -134,9 +134,9 @@ def bark(title: str, content: str) -> None:
     params = ""
     for pair in filter(
             lambda pairs: pairs[0].startswith("BARK_")
-                          and pairs[0] != "BARK_PUSH"
-                          and pairs[1]
-                          and bark_params.get(pairs[0]),
+        and pairs[0] != "BARK_PUSH"
+        and pairs[1]
+        and bark_params.get(pairs[0]),
             push_config.items(),
     ):
         params += f"{bark_params.get(pair[0])}={pair[1]}&"
@@ -168,7 +168,8 @@ def dingding_bot(title: str, content: str) -> None:
 
     timestamp = str(round(time.time() * 1000))
     secret_enc = push_config.get("DD_BOT_SECRET").encode("utf-8")
-    string_to_sign = "{}\n{}".format(timestamp, push_config.get("DD_BOT_SECRET"))
+    string_to_sign = "{}\n{}".format(
+        timestamp, push_config.get("DD_BOT_SECRET"))
     string_to_sign_enc = string_to_sign.encode("utf-8")
     hmac_code = hmac.new(
         secret_enc, string_to_sign_enc, digestmod=hashlib.sha256
@@ -359,7 +360,8 @@ def pushplus_bot(title: str, content: str) -> None:
     else:
         url_old = "http://pushplus.hxtrip.com/send"
         headers["Accept"] = "application/json"
-        response = requests.post(url=url_old, data=body, headers=headers).json()
+        response = requests.post(
+            url=url_old, data=body, headers=headers).json()
 
         if response["code"] == 200:
             print("PUSHPLUS(hxtrip) 推送成功！")
@@ -378,7 +380,8 @@ def qmsg_bot(title: str, content: str) -> None:
     print("qmsg 服务启动")
 
     url = f'https://qmsg.zendee.cn/{push_config.get("QMSG_TYPE")}/{push_config.get("QMSG_KEY")}'
-    payload = {"msg": f'{title}\n\n{content.replace("----", "-")}'.encode("utf-8")}
+    payload = {
+        "msg": f'{title}\n\n{content.replace("----", "-")}'.encode("utf-8")}
     response = requests.post(url=url, params=payload).json()
 
     if response["code"] == 0:
@@ -533,9 +536,9 @@ def telegram_bot(title: str, content: str) -> None:
                 "TG_PROXY_HOST"
         ):
             push_config["TG_PROXY_HOST"] = (
-                    push_config.get("TG_PROXY_AUTH")
-                    + "@"
-                    + push_config.get("TG_PROXY_HOST")
+                push_config.get("TG_PROXY_AUTH")
+                + "@"
+                + push_config.get("TG_PROXY_HOST")
             )
         proxyStr = "http://{}:{}".format(
             push_config.get("TG_PROXY_HOST"), push_config.get("TG_PROXY_PORT")
@@ -735,10 +738,11 @@ def send(title: str, content: str) -> None:
     hitokoto = push_config.get("HITOKOTO")
 
     text = one() if hitokoto else ""
-    content += "大自然的搬运工\nhttp://www.bedee.top/\n\n" + text
+    content += text
 
     ts = [
-        threading.Thread(target=mode, args=(title, content), name=mode.__name__)
+        threading.Thread(target=mode, args=(
+            title, content), name=mode.__name__)
         for mode in notify_function
     ]
     [t.start() for t in ts]
