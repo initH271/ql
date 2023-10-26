@@ -334,7 +334,7 @@ class CCBLife:
         url = "https://m3.dmsp.ccb.com/api/businessCenter/zhcUserDayAnswer/queryQuestionToday"
         response = self.session.get(url, headers=self.businessCenter_headers)
         response_dict = response.json()
-        dump_msg(response_dict)
+        print(response_dict)
         question_id = response_dict.get('data').get('questionId')
         question_name = response_dict.get('data').get('questionName')
         answer_list = response_dict.get('data').get('answerList')
