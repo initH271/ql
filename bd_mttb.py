@@ -1,6 +1,9 @@
 # cron "5 7,12,18 * * *" script-path=xxx.py,tag=匹配cron用
 # const $ = new Env('美团团币')
+# 微信打开并登录https://passport.meituan.com/useraccount/ilogin?risk_partner=0&risk_app=216&risk_platform=3&backurl=http%3A%2F%2Fmeishi.meituan.com%2Fi%2F%3Fci%3D290%26stid_b%3D1%26cevent%3Dimt%252Fhomepage%252Fcategory1%252F1
+# 右上角复制连接取出链接中的token字段
 # export bd_mttb=token
+# 多账号用&隔开
 
 import random
 from functools import partial
