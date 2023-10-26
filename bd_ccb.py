@@ -41,7 +41,7 @@ msg = ''
 
 def dump_msg(message):
     global msg
-    msg += message+"\n"
+    msg += f"{message}\n"
     print(message)
 
 
@@ -151,7 +151,7 @@ def chatgpt_answer_question(question_name, answer_str, chatgpt_index=0, knowledg
             return result
         except Exception as e:
             if e:
-                dump_msg('chatgpt: ', e)
+                dump_msg('chatgpt: ' + e)
                 return ''
 
     return requests_post_0(question_str)
