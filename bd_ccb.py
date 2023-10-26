@@ -40,6 +40,7 @@ msg = ''
 
 
 def dump_msg(message):
+    global msg
     msg += message+"\n"
     print(message)
 
