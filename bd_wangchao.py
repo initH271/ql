@@ -1,6 +1,6 @@
 """
 author: qingfeng
-cron: 2 8 * * *
+cron: 2 10 * * *
 new Env('望潮');
 地址：https://tzapp.taizhou.com.cn/webChannels/invite?inviteCode=BNYCV9
 进入app-首页-阅读有礼，先点击右下角抽奖，绑定zfb号
