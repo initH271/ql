@@ -892,7 +892,7 @@ class CCBLife:
                     url, headers=self.Component_headers, json=_json)
                 time.sleep(2)
             else:
-                dump_msg("response_dict: "+response_dict)
+                dump_msg(f"response_dict: {response_dict}")
         url = 'https://fission-events.ccbft.com/Component/draw/getUserExtInfo/224/1m0xM2mx'
         response = self.session.get(url, headers=self.Component_headers)
         response_dict = response.json()
