@@ -459,9 +459,8 @@ class CCBLife:
     # 获取Component_headers
     def get_component_headers(self):
         url = 'https://event.ccbft.com/api/flow/nf/shortLink/redirect/ccb_gjb?CCB_Chnl=1002702'
-        # TODO: 更新ck时， shortId参数应该一起更新
-        _json = {"appId": "wxd513efdbf26b5744", "shortId": "polFsWD2jPnjhOx9ruVBcA", "archId": "ccb_gjb",
-                 "channelId": "wx", "ifWxFirst": True, "wxUUID": self.wx_uuid}
+        _json = {"appId": "wxd513efdbf26b5744", "shortId": "jd9H3uCkzHaQBn8aeq5NWQ", "archId": "ccb_gjb",
+                 "channelId": "wx", "ifWxFirst": False, "wxUUID": self.wx_uuid}
         response = self.session.post(
             url, headers=self.businessCenter_headers, json=_json)
         response_dict = response.json()
@@ -893,7 +892,7 @@ class CCBLife:
                     url, headers=self.Component_headers, json=_json)
                 time.sleep(2)
             else:
-                dump_msg("response_dict: ", response_dict)
+                dump_msg("response_dict: "+response_dict)
         url = 'https://fission-events.ccbft.com/Component/draw/getUserExtInfo/224/1m0xM2mx'
         response = self.session.get(url, headers=self.Component_headers)
         response_dict = response.json()
