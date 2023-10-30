@@ -2,7 +2,7 @@
 time: 2023.10.23
 cron: 23 0 * * *
 new Env('sockboom签到');
-地址：https://sockboom.link/
+地址：https://sockboom.id/
 环境变量 bd_sockboom = 邮箱#密码
 多账号用&分开
 """
@@ -52,7 +52,7 @@ class sockboom():
         self.msg = ''
         self.ck = ck
         self.cks = ''
-        self.index_url = 'https://sockboom.link'
+        self.index_url = 'https://sockboom.id'
 
     def sign(self):
         time.sleep(0.5)

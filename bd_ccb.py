@@ -3,7 +3,7 @@
 # @Time    : 2023/8/7 14:17
 # @Author  : ziyou
 # -------------------------------
-# cron "5 7,12,18 * * *" script-path=xxx.py,tag=匹配cron用
+# cron "5 12,18 * * *" script-path=xxx.py,tag=匹配cron用
 # const $ = new Env('建行生活')
 # 活动信息: 奋斗季cc豆 功能：每日营收，签到 浏览任务，答题，抽奖，专区任务，互助
 # 先开抓包，先开抓包，抓的是微信端,搜 wParam，复制wParam值，没抓到等两小时在抓
