@@ -52,7 +52,7 @@ class sockboom():
         self.msg = ''
         self.ck = ck
         self.cks = ''
-        self.index_url = 'https://sockboom.id'
+        self.index_url = 'https://sockboom.buzz'
 
     def sign(self):
         time.sleep(0.5)
